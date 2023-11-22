@@ -39,7 +39,7 @@ function deleteHandler (index) {
     <div className="App">
       <h1>To Do List</h1>
       <Form submitHandler={submitHandler} listInput={listInput} setListInput={setListInput}/>
-      <div id="list" style={(toggle || tasks.length == 0) ? {paddingBottom: "10px"} : {paddingBottom: "0" }}>
+      <div id="list" style={toggle ? {paddingBottom: "10px"} : {paddingBottom: "0" }}>
         <button onClick={() => changeToggle()} id="showHide">{toggle ? "Hide List" : "Show List" }</button>
         {toggle && tasks.map(function(task,index) {
           return <ListItem deleteHandler={() => deleteHandler(index)} taskContent={tasks[index]}/>
