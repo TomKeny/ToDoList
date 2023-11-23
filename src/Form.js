@@ -1,6 +1,5 @@
 export function Form ({submitHandler, listInput, setListInput}) {
         return (
-            <>
                 <form onSubmit={submitHandler}>
                     <label id="taskInput">
                         <p id="taskText">Task:</p>
@@ -11,7 +10,6 @@ export function Form ({submitHandler, listInput, setListInput}) {
                         <input type="submit" id="Submit"/>
                     </label>
                 </form>
-            </>
         )
 }
 export default Form;

@@ -42,11 +42,11 @@ function deleteHandler (index) {
       <div id="list" style={toggle ? {paddingBottom: "10px"} : {paddingBottom: "0" }}>
         <button onClick={() => changeToggle()} id="showHide">{toggle ? "Hide List" : "Show List" }</button>
         {toggle && tasks.map(function(task,index) {
-          return <ListItem deleteHandler={() => deleteHandler(index)} taskContent={tasks[index]}/>
+          return <ListItem deleteHandler={() => deleteHandler(index)} taskContent={task}/>
         })}
       </div>
     </div>
-  );
+  )
 }
 
 export default App;
