@@ -2,6 +2,7 @@ import './App.css';
 import {useState} from "react"
 import {Form} from "./Form.js"
 import {ListItem} from "./ListItem"
+import { motion } from "framer-motion"
 
 function App() {
 
@@ -39,12 +40,12 @@ function deleteHandler (index) {
     <div className="App">
       <h1>To Do List</h1>
       <Form submitHandler={submitHandler} listInput={listInput} setListInput={setListInput}/>
-      <div id="list" style={toggle ? {paddingBottom: "10px"} : {paddingBottom: "0" }}>
+      <motion.div id="list" animate={toggle ? {paddingBottom: "10px"} : {paddingBottom: "0" }}>
         <button onClick={() => changeToggle()} id="showHide">{toggle ? "Hide List" : "Show List" }</button>
         {toggle && tasks.map(function(task,index) {
           return <ListItem deleteHandler={() => deleteHandler(index)} taskContent={task}/>
         })}
-      </div>
+      </motion.div>
     </div>
   )
 }
